@@ -1,0 +1,148 @@
+/* basic styling */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-y: hidden;
+    font-family: 'Permanent Marker', cursive;
+
+}
+
+/* background city styling --> */
+.city-outer{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    background: linear-gradient(-360deg , rgb(143 , 255 , 245) , rgb(247 , 167 , 87));
+}
+/* .car {
+    width: 24%;
+} */
+
+/* sky styling --> */
+.city-outer::before{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: absolute;
+    left:0;
+    right: 0;
+    margin: 0 auto;
+    top: 3em;
+    content: '';
+    background: radial-gradient(rgba(230 , 222 , 222 , 0.25) , rgba(255 , 255 , 255 , 0.25));
+    /* background: radial-gradient(yellow , orange); */
+}
+
+/*cloud styling -->  */
+.cloud{
+    background: url('../Pictures/cloud.png');
+    height: 200px;
+    background-repeat: repeat-x;
+    margin-top: 3em;
+    /* animation: cloudanimate 9s linear infinite; */
+}
+
+/* back image styling --> */
+.city-inner{
+    background: url('../Pictures/back.png');
+    width: 600%;
+    height: 600px;
+    position: absolute;
+    bottom: 0;
+    background-repeat: repeat-x;
+    /* animation: cityanimate 5s linear infinite; */
+}
+
+/* car styling and positioning --> */
+.car{
+    position: absolute;
+    bottom: 6%;
+    left: 15%;
+    /* width: 24%;
+    height: auto; */
+    /* animation: caranimate 1s linear infinite; */
+}
+
+/* clouds animation --> */
+@keyframes cloudanimate {
+    100%{
+        transform: translateX(1200px);
+        opacity: 0.4;
+    }
+}
+
+/* city animation --> */
+@keyframes cityanimate {
+    100%{
+        transform: translateX(-2500px);
+    }
+}
+
+/* car animation --> */
+@keyframes caranimate {
+    100%{
+        transform: translateY(-2px);
+    }
+    50%{
+        transform: translateY(1px);
+    }
+    0%{
+        transform: translateY(-2px);
+    }
+}
+
+/* day - night toggle styling --> */
+.daytonight{
+    background: linear-gradient(180deg , rgb(16,17,29) , rgb(0,10,58));
+}
+
+/* all animations embedded in respective classes --> */
+.cityanimation{
+    animation: cityanimate 2s linear infinite;
+}
+.caranimation{
+    animation: caranimate 1s linear infinite;
+}
+.cloudanimation{
+    animation: cloudanimate 9s linear infinite;
+}
+
+/* game starter div styling --> */
+.game-start{
+    width: 50%;
+    height: 36vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.8);
+    line-height: 10vh;
+}
+.game-start h2{
+    color: whitesmoke;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    letter-spacing: 5px;
+}
+.game-start h2 span{
+    font-size: 40px;
+    color:yellow;
+    padding-right: 8px;
+}
+.game-start h1{
+    color:chartreuse;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 40px;
+    text-align: center;
+    /* font-family: 'Permanent Marker', cursive; */
+    letter-spacing: 5px;
+    text-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.3);
+}
